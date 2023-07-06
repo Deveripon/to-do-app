@@ -1,0 +1,50 @@
+@media all and (max-width: 768px) {
+  .to-do-box {
+
+    .left-side {
+      border-radius: 10px 10px 0px 0px;
+
+      .user-box {
+        margin-bottom: 10px;
+
+        .user-image {
+          margin-right: 10px;
+
+          img {
+            width: 80px;
+            height: 80px;
+            border-radius: 100%;
+            border: 1px solid rgb(178, 192, 178);
+          }
+        }
+
+        .user-info {
+          margin-top: 20px;
+          margin-left: 05px;
+
+          .user-name {
+            font-family: $themefont2;
+            font-size: 20px;
+          }
+
+          .user-desg {
+            font-size: 15px;
+          }
+        }
+      }
+    }
+
+    .right-side {
+      border-radius: 0px 0px 10px 10px;
+
+      .year {
+        h2 {
+          margin-top: 20px;
+
+        }
+      }
+    }
+  }
+}
+
+;

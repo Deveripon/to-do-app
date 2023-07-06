@@ -1,0 +1,237 @@
+body {
+  background-color: $bgcolor1 !important;
+  margin: auto;
+  text-align: center;
+  font-family: $themefont2;
+
+  .container {
+    margin: auto !important;
+  }
+
+  .title {
+    color: rgb(216, 216, 216);
+  }
+}
+
+.to-do-box {
+  margin-top: 50px;
+  height: calc(60%-100vh);
+
+  .left-side {
+    padding: 40px;
+    background-color: $bgcolor2;
+    box-sizing: border-box;
+    border-radius: 20px 0px 0px 20px;
+
+    .user-box {
+      display: flex;
+      margin-bottom: 50px;
+
+      .user-image {
+        margin-right: 10px;
+
+        img {
+          width: 80px;
+          height: 80px;
+          border-radius: 100%;
+          border: 1px solid rgb(178, 192, 178);
+        }
+      }
+
+      .user-info {
+        margin-top: 20px;
+        margin-left: 05px;
+
+        .user-name {
+          font-family: $themefont2;
+          font-size: 20px;
+        }
+
+        .user-desg {
+          font-size: 15px;
+        }
+      }
+    }
+
+    .divider {
+      @include divider;
+    }
+  }
+
+  .right-side {
+    background-color: $themecolor1;
+    box-sizing: border-box;
+    border-radius: 0px 20px 20px 0px;
+    padding: 40px;
+
+    .divider {
+      @include divider;
+      margin-top: 80px;
+      background-color: $bgcolor2;
+    }
+
+    .calender {
+
+      .day-month {
+        background-color: $bgcolor2;
+        padding: 20px;
+      }
+
+      .year-area {
+        background-color: $bgcolor3;
+        box-sizing: border-box;
+        padding: 20px;
+
+        .year {
+          rotate: -90deg;
+
+          h2 {
+            line-height: 50px;
+            margin-top: 20px;
+
+            @media all and (min-width: 900px) {
+              margin-top: 35px;
+            }
+
+            @media all and (min-width: 1200px) {
+              margin-top: 13px;
+            }
+          }
+        }
+      }
+    }
+
+    .add-task {
+      margin-top: 30px;
+
+      i {
+        border-radius: 100%;
+        height: 20px;
+        width: 20px;
+      }
+    }
+
+    .complete-task {
+      margin-top: 30px;
+      background-color: $bgcolor4;
+      border: 1px solid transparent;
+      transition: 0.4s;
+
+      &:hover {
+        background-color: $hover4;
+      }
+
+      i {
+        border-radius: 100%;
+        height: 20px;
+        width: 20px;
+        color: #fff;
+      }
+    }
+
+    .delete-task {
+      margin-top: 30px;
+      background-color: $bgcolor5;
+      border: 1px solid transparent;
+      color: $themecolor1;
+      transition: 0.4s;
+
+      &:hover {
+        background-color: $hover5;
+      }
+
+      i {
+        border-radius: 100%;
+        height: 20px;
+        width: 20px;
+        color: #fff;
+      }
+    }
+
+
+
+    .task-form {
+      padding: 20px;
+
+      label {
+        color: $fontcolor1;
+      }
+    }
+
+    .task-container {
+      padding: 0px !important;
+
+      .task {
+        background-color: $bgcolor3;
+        padding: 7px 20px;
+        margin: 10px 0px;
+        border-radius: 20px;
+        height: fit-content;
+
+        .checkbox-container {
+          display: flex;
+          flex-direction: row;
+
+          .complete-check {
+            height: 15px;
+            width: 15px;
+            border: 3px solid $checkbox1;
+            border-radius: 100%;
+            cursor: pointer;
+
+
+            @media all and (max-width:576px) {
+              margin-top: 35px !important;
+
+            }
+          }
+
+          .complete-check.active {
+            background: $checkbox1;
+          }
+
+          .delete-check {
+            height: 15px;
+            width: 15px;
+            border: 3px solid $checkbox2;
+            border-radius: 100%;
+            cursor: pointer;
+            margin-left: 5px;
+
+            @media all and (max-width:576px) {
+              margin-top: 35px !important;
+
+            }
+          }
+
+          .delete-check.active {
+            background: $checkbox2;
+          }
+
+
+        }
+
+
+
+        .priority-container {
+          margin: auto;
+          text-align: center;
+          vertical-align: middle;
+
+
+          .priority {
+            background: #e3460c;
+            padding: 5px;
+            border-radius: 10px;
+            color: aliceblue;
+            font-weight: bold;
+            vertical-align: middle;
+
+
+          }
+        }
+
+      }
+    }
+  }
+}
