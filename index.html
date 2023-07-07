@@ -48,11 +48,11 @@
           <!-- right side header -->
           <div class="date-indicator">
             <div class="row">
-              <div class="col-8">
+              <div class="col-6 col-sm-8">
                 <h2 class="today">Today</h2>
                 <div class="divider"></div>
               </div>
-              <div class="col-4">
+              <div class="col-6 col-sm-4">
                 <div class="calender">
                   <div class="row">
                     <div class="col-6 day-month">
@@ -92,13 +92,14 @@
             <div class="modal-dialog modal-dialog-centered" role="document">
               <div class="modal-content">
                 <div class="modal-body">
-                  <form action="#" class="task-form">
-                    <textarea placeholder="Type task details" class="form-control" aria-label="With textarea"
-                      rows="5"></textarea>
+                  <form action="#" id="task-form" class="task-form">
+                    <textarea placeholder="Type task details" class="form-control task-content"
+                      aria-label="With textarea" rows="5"></textarea>
                     <label for="check">
                       <input class="" type="checkbox" name="" id="check"> Mark as Important
                     </label>
-                    <input class="form-control btn btn-success rounded-4" type="submit" value="Add Task">
+                    <input class="form-control btn btn-success rounded-4" onsubmit="formSubmit()" type="submit"
+                      value="Add Task">
                   </form>
                 </div>
               </div>
@@ -123,7 +124,7 @@
                     </div>
                     <div class="col-9">
                       <p style="vertical-align: middle; margin: 0px">Lorem ipsum dolor
-                        sit amet consectetur adipisicing elit.</p>
+                        sit amt.</p>
                     </div>
                   </div>
 
@@ -150,7 +151,7 @@
                     </div>
                     <div class="col-9">
                       <p style="vertical-align: middle; margin: 0px">Lorem ipsum dolor
-                        sit amet consectetur adipisicing elit.</p>
+                        sit amt.</p>
                     </div>
                   </div>
 
@@ -177,7 +178,7 @@
                     </div>
                     <div class="col-9">
                       <p style="vertical-align: middle; margin: 0px">Lorem ipsum dolor
-                        sit amet consectetur adipisicing elit.</p>
+                        sit amt.</p>
                     </div>
                   </div>
 
@@ -204,7 +205,7 @@
                     </div>
                     <div class="col-9">
                       <p style="vertical-align: middle; margin: 0px">Lorem ipsum dolor
-                        sit amet consectetur adipisicing elit.</p>
+                        sit amt.</p>
                     </div>
                   </div>
 
@@ -215,6 +216,7 @@
               </div>
             </li>
             <!-- task -->
+
         </div>
 
 

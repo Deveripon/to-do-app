@@ -23,6 +23,10 @@ body {
     box-sizing: border-box;
     border-radius: 20px 0px 0px 20px;
 
+    @media all and (max-width: 400px) {
+      border-radius: 0px 0px 0px 0px !important;
+    }
+
     .user-box {
       display: flex;
       margin-bottom: 50px;
@@ -117,6 +121,12 @@ body {
       border: 1px solid transparent;
       transition: 0.4s;
 
+      @media all and (max-width:400px) {
+        margin-top: 10px;
+      }
+
+
+
       &:hover {
         background-color: $hover4;
       }
@@ -129,12 +139,25 @@ body {
       }
     }
 
+    .complete-check.active {
+      background-color: $hover4;
+
+    }
+
     .delete-task {
       margin-top: 30px;
       background-color: $bgcolor5;
       border: 1px solid transparent;
       color: $themecolor1;
       transition: 0.4s;
+
+      @media all and (max-width:992px) {
+        margin-top: 10px;
+      }
+
+      @media all and (min-width:554px)and (max-width:576px) {
+        margin-top: 30px;
+      }
 
       &:hover {
         background-color: $hover5;
@@ -148,7 +171,9 @@ body {
       }
     }
 
-
+    .delete-task.active {
+      background-color: $hover5;
+    }
 
     .task-form {
       padding: 20px;
