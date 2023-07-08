@@ -3,17 +3,13 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport"
-    content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <!-- main stylesheet file -->
-  <link rel="stylesheet"
-    href="./assets/css/main.css">
+  <link rel="stylesheet" href="./assets/css/main.css">
   <!-- bootstrap css  -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
-    rel="stylesheet"
-    integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
-    crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
 </head>
 
 <body>
@@ -28,8 +24,7 @@
             <div class="row">
               <div class="col-lg-4">
                 <div class="user-image">
-                  <img src="https://www.teqfocus.com/wp-content/uploads/2019/03/team-member-02.jpg"
-                    alt="">
+                  <img src="https://www.teqfocus.com/wp-content/uploads/2019/03/team-member-02.jpg" alt="">
                 </div>
               </div>
               <div class="col-lg-8">
@@ -80,9 +75,8 @@
           </div>
           <!-- right side header -->
           <!-- add new task button -->
-          <button class="add-task btn rounded-5 btn-success"
-            data-toggle="modal"
-            data-target="#taskmodal"><i class="fa-solid fa-plus "></i>Add new
+          <button class="add-task btn rounded-5 btn-success" data-toggle="modal" data-target="#taskmodal"><i
+              class="fa-solid fa-plus "></i>Add new
             task</button>
           <button class="complete-task btn rounded-5 "><i class="fa-solid fa-circle-check"></i> Completed
             Tasks</button>
@@ -93,14 +87,9 @@
           <!-- add-new-task-form -->
 
           <!-- Modal -->
-          <div class="modal fade"
-            id="taskmodal"
-            tabindex="-1"
-            role="dialog"
-            aria-labelledby="exampleModalLabel"
+          <div class="modal fade" id="taskmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
             aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered"
-              role="document">
+            <div class="modal-dialog modal-dialog-centered" role="document">
               <div class="modal-content">
                 <div class="modal-body">
                   <!--  alert massage box -->
@@ -108,25 +97,18 @@
 
                     <!--     alert-massage -->
 
+
                     <!--     alert-massage -->
                   </div>
                   <!--  alert massage box -->
-                  <form action="#"
-                    id="task-form"
-                    class="task-form">
-                    <textarea placeholder="Type task details"
-                      class="form-control task-content"
-                      aria-label="With textarea"
-                      rows="5"></textarea>
+                  <form action="#" id="task-form" class="task-form">
+                    <textarea placeholder="Type task details" class="form-control task-content"
+                      aria-label="With textarea" rows="5"></textarea>
                     <label for="check">
-                      <input class=""
-                        type="checkbox"
-                        name=""
-                        id="check"> Mark as Important
+                      <input class="" type="checkbox" name="" id="check"> Mark as
+                      Important
                     </label>
-                    <input class="form-control btn btn-success rounded-4"
-                      onsubmit="formSubmit()"
-                      type="submit"
+                    <input class="form-control btn btn-success rounded-4" onsubmit="formSubmit()" type="submit"
                       value="Add Task">
                   </form>
                 </div>
@@ -137,9 +119,40 @@
           <!-- task-list -->
           <ul class="task-container">
             <!-- task -->
+            <!-- <li class="task">
+              <div class="row">
 
+                <div class="col-sm-1 checkbox-container"
+                  style="vertical-align: middle; text-align: center; margin: auto;">
+
+                  <div class="complete-check" data-toggle="tooltip" data-placement="top" title="Mark as Complete"
+                    style="margin-right: 05px;">
+                    <i class="fa-regular fa-circle" style="color: #0c7a0b;"></i>
+
+                  </div>
+
+                  <div class="delete-check" data-toggle="tooltip" data-placement="top" title="Delete task">
+                    <i class="fa-solid fa-circle-xmark"></i>
+                  </div>
+                </div>
+
+                <div class="col-sm-9">
+                  <p class="task-desc" style="vertical-align: middle;
+                  text-align: left;
+                  margin: auto;">
+                    ${task.task_content}</p>
+                </div>
+
+                <div class="col-sm-2 priority-container" style="vertical-align: middle;
+                text-align: center;
+                margin: auto;">
+
+                  <span class="priority"><i class="fa-solid fa-star" style="color: #cf9904"></i></span>
+
+                </div>
+              </div>
+            </li> -->
             <!-- task -->
-
 
         </div>
 
@@ -155,20 +168,16 @@
 
   <!-- bootstrap js -->
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-    crossorigin="anonymous">
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
   </script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
-    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-    crossorigin="anonymous">
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
   </script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
-    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-    crossorigin="anonymous">
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
   </script>
   <!-- bootstrap js -->
-  <script src="https://kit.fontawesome.com/2ab099f38c.js"
-    crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/2ab099f38c.js" crossorigin="anonymous"></script>
   <!-- database script file link -->
   <script src="./src/db.js"></script>
   <!-- javascript functions file link -->
@@ -176,5 +185,7 @@
   <!-- javascript main script file -->
   <script src="./src/index.js"></script>
 </body>
+
+</html>
 
 </html>
