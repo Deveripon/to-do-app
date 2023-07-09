@@ -3,7 +3,9 @@ const taskForm = document.getElementById("task-form");
 const textArea = taskForm.querySelector(".task-content");
 const checkBox = taskForm.querySelector("input[type=checkbox]");
 const alertBox = document.querySelector(".massage-box");
-const taskContainer = document.querySelector(".task-container");
+const activetaskContainer = document.querySelector(
+  ".task-container.active-task"
+);
 
 //check the checkbox value
 const checkBoxValue = () => {
@@ -54,8 +56,8 @@ taskForm.addEventListener("submit", function (e) {
 function showData() {
   let allTask = getData("tasks");
 
-  if (!allTask) {
-    taskContainer.innerHTML = `
+  if (allTask.length <= 0) {
+    activetaskContainer.innerHTML = `
     <li>
          <p class="task-desc alert mt-5 alert-warning" style="vertical-align: middle;
          text-align: left;
@@ -68,20 +70,21 @@ function showData() {
     let singleTask = "";
 
     allTask.map((task, index) => {
-      singleTask += `    
+      singleTask += `  
+      
       <li class="task">
      <div class="row">
  
        <div class="col-sm-1 checkbox-container"
          style="vertical-align: middle; text-align: center; margin: auto;">
  
-         <div class="complete-check" data-toggle="tooltip" data-placement="top" title="Mark as Complete"
+         <div class="complete-check" onclick= dataComplete(${index}) data-toggle="tooltip" data-placement="top" title="Mark as Complete"
            style="margin-right: 05px;">
-           <i class="fa-regular fa-circle" style="color: #0c7a0b;"></i>
+           <i class="fa-solid fa-circle-check" style="color: #167d08;"></i>
  
          </div>
  
-         <div class="delete-check" data-toggle="tooltip" data-placement="top" title="Delete task">
+         <div class="delete-check" onclick= dataDelete(${index}) data-toggle="tooltip" data-placement="top" title="Delete task">
            <i class="fa-solid fa-circle-xmark"></i>
          </div>
        </div>
@@ -107,7 +110,75 @@ function showData() {
      </div>
    </li>`;
     });
-    taskContainer.innerHTML = singleTask;
+    activetaskContainer.innerHTML = singleTask;
   }
 }
 showData();
+
+//lets delete task data
+/**
+ * @constractor
+ * @param{}
+ * @param{}
+ * Delete data from the storage
+ */
+function dataDelete(index) {
+  //get all data from local storage
+  let filterdData = getData("tasks");
+  //change the object properties value when button in clicked
+  let trashItems = (filterdData[index].isTrashed = true);
+  //find the clicked data to delete
+  let trashed = filterdData.find((task) => task.isTrashed == true);
+  //find the index of the data to delete
+  let indexofTrashedData = filterdData.indexOf(trashed);
+  //splice the data from the index to delete data from main task array and keep the trashed data in the array
+  let splicedData = filterdData.splice(indexofTrashedData, 1);
+
+  //keep the ramining data in a variable which is not trashed
+  let remainData = filterdData;
+
+  //send the trashed data to the new local storage key
+  let trashedDataArray;
+  getData("trash")
+    ? (trashedDataArray = getData("trash"))
+    : (trashedDataArray = []);
+  trashedDataArray.push(splicedData);
+  sendData("trash", trashedDataArray);
+
+  //send data to the main task key of local storage
+  sendData("tasks", remainData);
+  //show the data
+  showData();
+}
+/**
+ * @constractor
+ * @param{}
+ * @param{}
+ * Data complete and send to local storage
+ */
+//lets complete task data
+function dataComplete(index) {
+  //get all data from local storage
+  let filterdData = getData("tasks");
+  //change the filterd data state to completed
+  filterdData[index].isCompleted = true;
+  let completedTask = filterdData.find((data) => data.isCompleted == true);
+  //get the index of the completed task
+  let indexOfCompletedTask = filterdData.indexOf(completedTask);
+
+  //splice  the data
+  let completedTaskData = filterdData.splice(indexOfCompletedTask, 1);
+  let remainData = filterdData;
+
+  //data send to the database
+  let completedDataArray;
+  getData("complete")
+    ? (completedDataArray = getData("complete"))
+    : (completedDataArray = []);
+  completedDataArray.push(completedTaskData);
+  sendData("complete", completedDataArray);
+  //send data to the main task key of local storage
+  sendData("tasks", remainData);
+  //show the data
+  showData();
+}

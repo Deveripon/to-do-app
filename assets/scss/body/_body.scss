@@ -12,7 +12,7 @@ body {
     color: rgb(216, 216, 216);
   }
 }
-  
+
 
 .to-do-box {
   margin-top: 20px;
@@ -209,6 +209,7 @@ body {
           .complete-check,
           .delete-check {
             cursor: pointer !important;
+
           }
 
           .delete-check i {
@@ -226,5 +227,14 @@ body {
         }
       }
     }
+
   }
+}
+
+.task-container.active-container {
+  display: block;
+}
+
+.task-container.hidden-container {
+  display: none;
 }
