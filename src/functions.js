@@ -54,4 +54,16 @@ function dataDelete(index) {
   sendData("tasks", remainData);
   //show the data to frontend
   showData();
+  console.log(splicedData);
+}
+
+/**
+ * @constractor
+ * @param{}
+ * @param{}
+ * comment-text:make task incomplete
+ */
+
+function makeIncomplete(id) {
+  alert(`task id is ${id}`);
 }

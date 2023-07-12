@@ -31,7 +31,7 @@ deleteTaskButton.addEventListener("click", function (e) {
     allTrashedTasks.map((item, index) => {
       for (let i = 0; i < item.length; i++) {
         singleTrashTask += `
-        <li class="task bg-grey"  >
+        <li class="task bg-grey" style="cursor:pointer" data-toggle="modal" data-target="#trashedprompt">
         <div class="row">
         <div class="col-sm-1 checkbox-container"
         style="vertical-align: middle; text-align: center; margin: auto;">
@@ -42,13 +42,33 @@ deleteTaskButton.addEventListener("click", function (e) {
 
         </div>
       </div>
-          <div class="col-sm-9">
+          <div class="col-sm-9" >
           <p class="task-desc" style="vertical-align: middle;
            text-align: left;
            margin:auto 20px;">
              <del>${item[i].task_content}</del></p>
-          </div>   
-          <div class="col-sm-2 priority-container" style="vertical-align: middle;
+          </div>  
+          <div class="completed-promt col-sm-1">
+          <div class="modal fade" id="trashedprompt" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+                <div class="modal-body">
+                  <div class="delete-form" type="button" class="btn btn-secondary" data-dismiss="modal">
+                    <i class="fa-solid fa-circle-xmark"></i>
+                  </div>
+                        <h4 class="confirm-massage mx-5">Confirm Action</h4>
+                  <div class="confirm-box py-4 d-flex align-content-center justify-content-center gap-3">
+                         
+                          <button class="btn btn-rounded btn-success restore-button">Restore Task</button>
+                          <button class="btn btn-rounded btn-danger per-delete-button">Delete Permanently</button>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+        </div> 
+          <div class="col-sm-1 priority-container" style="vertical-align: middle;
           text-align: center;
           margin: auto;">
     
@@ -98,7 +118,7 @@ completedTaskButton.addEventListener("click", function (e) {
     allCompletedTasks.map((item, index) => {
       for (let i = 0; i < item.length; i++) {
         singlecompletedTask += `
-        <li class="task" style="background-color: rgb(37, 251, 122)" >
+        <li class="task" style="background-color: rgb(37, 251, 122);cursor:pointer;" data-toggle="modal" data-target="#completedprompt">
         <div class="row">
         <div class="col-sm-1 checkbox-container"
         style="vertical-align: middle; text-align: center; margin: auto;">
@@ -109,14 +129,37 @@ completedTaskButton.addEventListener("click", function (e) {
 
         </div>
       </div>
-          <div class="col-sm-9">
+          <div class="col-sm-9" style="cursor:pointer" data-toggle="modal" data-target="#completedprompt">
             <p class="task-desc" style="vertical-align: middle;
             text-align: left;
             margin:auto 20px;">
               ${item[i].task_content}</p>
           </div>
-    
-          <div class="col-sm-2 priority-container" style="vertical-align: middle;
+
+        <div class="completed-promt col-sm-1">
+          <div class="modal fade" id="completedprompt" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+                <div class="modal-body">
+                  <div class="delete-form" type="button" class="btn btn-secondary" data-dismiss="modal">
+                    <i class="fa-solid fa-circle-xmark"></i>
+                  </div>
+                  <h4 class="confirm-massage mx-5">Confirm Action</h4>
+                  <div class="confirm-box py-4 d-flex align-content-center justify-content-center gap-3">
+                          <button onclick="makeIncomplete(${i})" class="btn btn-rounded btn-success incomplete-button">Mard as incomplete</button>
+                          <button onclick="deletePermanent(${i})" class="btn btn-rounded btn-danger per-delete-button">Delete Permanently</button>
+                  </div>
+
+                </div>
+              </div>
+            </div>  
+        </div>
+
+
+
+          </div>
+          <div class="col-sm-1 priority-container" style="vertical-align: middle;
           text-align: center;
           margin: auto;">
     

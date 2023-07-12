@@ -125,12 +125,16 @@ showData();
 function dataDelete(index) {
   //get all data from local storage
   let filterdData = getData("tasks");
+
   //change the object properties value when button in clicked
   let trashItems = (filterdData[index].isTrashed = true);
+
   //find the clicked data to delete
   let trashed = filterdData.find((task) => task.isTrashed == true);
+
   //find the index of the data to delete
   let indexofTrashedData = filterdData.indexOf(trashed);
+
   //splice the data from the index to delete data from main task array and keep the trashed data in the array
   let splicedData = filterdData.splice(indexofTrashedData, 1);
 
@@ -150,6 +154,7 @@ function dataDelete(index) {
   //show the data
   showData();
 }
+
 /**
  * @constractor
  * @param{}
@@ -159,10 +164,13 @@ function dataDelete(index) {
 //lets complete task data
 function dataComplete(index) {
   //get all data from local storage
+
   let filterdData = getData("tasks");
   //change the filterd data state to completed
+
   filterdData[index].isCompleted = true;
   let completedTask = filterdData.find((data) => data.isCompleted == true);
+
   //get the index of the completed task
   let indexOfCompletedTask = filterdData.indexOf(completedTask);
 
